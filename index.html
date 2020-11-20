@@ -1,11 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+<html>
+  <head>
+    <title>Weather</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/704bcb8832.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="weather" class="weather-container">
+        <span class="degree-buttons" id="degree-buttons">
+          <button
+            type="button"
+            class="btn btn-outline-dark fahrenheit"
+            id="fahrenheit"
+          >
+            F°
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-dark celsius"
+            id="celsius"
+          >
+            C°
+          </button>
+        </span>
+
+        <button id="location">
+          <i class="fas fa-map-marker-alt"></i>
+        </button>
+        <h6 id="time">
+          Tuesday 12:53pm
+        </h6>
+
+        <form class="city-search" id="search">
+          <input
+            type="search"
+            placeholder="City"
+            id="city-input"
+            autocomplete="off"
+            outofocus="on"
+          />
+          <input type="submit" value="Search" class="submit-button" />
+        </form>
+
+        <div class="weather-summary">
+          <div class="weather-summary-header">
+            <h1 id="search-outcome">Lewisville</h1>
+            <div class="weather-detail" id="description">Rain</div>
+          </div>
+
+          <div class="float-left weather-emoji" id="icon">
+            🌧
+          </div>
+          <div class="weather-temp weather-temp--today" id="temp">48°</div>
+
+          <div class="real-feel" id="feeling">Real feel 35°</div>
+
+          <div class="wind" id="wind-speed">
+            Wind: 14mph
+            <svg
+              width="1em"
+              height="1em"
+              viewBox="0 0 16 16"
+              class="bi bi-arrow-up-left-circle"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M10.828 10.828a.5.5 0 0 1-.707 0L6.025 6.732V9.5a.5.5 0 0 1-1 0V5.525a.5.5 0 0 1 .5-.5H9.5a.5.5 0 0 1 0 1H6.732l4.096 4.096a.5.5 0 0 1 0 .707z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="row weather-week">
+          <div class="col">
+            <div class="forecast-emoji">🌧</div>
+            <div class="forecast-temp">62°</div>
+            <div class="forecast-day">WED</div>
+          </div>
+          <div class="col">
+            <div class="forecast-emoji">🌦</div>
+            <div class="forecast-temp">60°</div>
+            <div class="forecast-day">THU</div>
+          </div>
+          <div class="col">
+            <div class="forecast-emoji">🌥</div>
+            <div class="forecast-temp">60°</div>
+            <div class="forecast-day">FRI</div>
+          </div>
+          <div class="col">
+            <div class="forecast-emoji">🌤</div>
+            <div class="forecast-temp">48°</div>
+            <div class="forecast-day">SAT</div>
+          </div>
+          <div class="col">
+            <div class="forecast-emoji">☀️</div>
+            <div class="forecast-temp">48°</div>
+            <div class="forecast-day">SUN</div>
+          </div>
+          <div class="col">
+            <div class="forecast-emoji">☀️</div>
+            <div class="forecast-temp">48°</div>
+            <div class="forecast-day">MON</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
