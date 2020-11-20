@@ -16,6 +16,9 @@ input[type="search"] {
   padding: 10px;
   width: 300px;
 }
+footer{
+  opacity: 0.6;
+}
 
 .weather-container {
   background-image: linear-gradient(
